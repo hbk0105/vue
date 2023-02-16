@@ -22,4 +22,5 @@ https://opheliesaysone.tistory.com/5
 vscode -> gitbug > jenkins > build 배포
 
 
-vscode
+git config --global user.email "adsfdas@naver.com"
+git config --global user.name "hbk0105"
