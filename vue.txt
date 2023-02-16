@@ -1,0 +1,25 @@
+npm i -g @vue/cli-init
+
+vue init webpack-simple vue-todo
+
+? Project name vue-todo
+? Project description A Vue.js project
+? Author
+? License MIT
+? Use sass? No
+
+npm i
+
+npm run dev
+
+
+git clone https://github.com/hbk0105/vue.git
+
+https://opheliesaysone.tistory.com/5
+
+
+
+vscode -> gitbug > jenkins > build 배포
+
+
+vscode
