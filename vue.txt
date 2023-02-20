@@ -24,3 +24,6 @@ vscode -> gitbug > jenkins > build 배포
 
 git config --global user.email "adsfdas@naver.com"
 git config --global user.name "hbk0105"
+
+
+https://babeljs.io/

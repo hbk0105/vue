@@ -4,57 +4,81 @@
         <span class="addContainer" v-on:click="addTodo">
             <i class="fas fa-plus addBtn"></i>
         </span>
+
+        <Modal v-if="showModal" @close="showModal = false">
+            <!--
+              you can use custom content here to overwrite
+              default content
+            -->
+            <!-- slot : 커스텀 하여 재정의 가능 -->
+            <h3 slot="header">경고
+                <i class="closeModelBtn fas fa-times" @click="showModal = false"></i>
+            </h3>
+        </Modal>
     </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue';
 export default {
     data : function(){
         return {
-            newTodoItem : ""
+            newTodoItem : "",
+            showModal : false,
         }
     },
     methods : {
         addTodo : function(){
             if(this.newTodoItem !== ''){
-                var obj = {completed : false , item : this.newTodoItem};
-                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                // var obj = {completed : false , item : this.newTodoItem};
+                // localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                this.$emit('addTodoItem',this.newTodoItem);
                 this.clearInput();
+            } else {
+                this.showModal = !this.showModal;
             }
         },
         clearInput: function () {
             this.newTodoItem = '';
         }
+    },
+    components : {
+        Modal : Modal
     }
 }
 </script>
-
 <style scoped>
-input :focus{
+input:focus {
     outline: none;
 }
-.inputBox{
+
+.inputBox {
     background: white;
     height: 50px;
     line-height: 50px;
     border-radius: 5px;
 }
-.inputBox input{
+
+.inputBox input {
     border-style: none;
     font-size: 0.9rem;
     width: 80%;
     height: 80%;
-
 }
-.addContainer{
+
+.addContainer {
     float: right;
-    background: linear-gradient(to right, #6478fb,#8763fb);
+    background: linear-gradient(to right, #6478FB, #8763FB);
     display: block;
     width: 3rem;
     border-radius: 0 5px 5px 0;
 }
-.addBtn{
- color : white;
- vertical-align: middle;   
+
+.addBtn {
+    color: white;
+    vertical-align: middle;
+}
+.closeModelBtn{
+    color : #42b983
 }
 </style>
