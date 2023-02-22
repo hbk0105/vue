@@ -27,3 +27,6 @@ git config --global user.name "hbk0105"
 
 
 https://babeljs.io/
+
+https://joshua1988.github.io/web-development/vuejs/vuex-start/
+npm install vuex --save

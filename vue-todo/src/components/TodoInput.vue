@@ -32,7 +32,10 @@ export default {
             if(this.newTodoItem !== ''){
                 // var obj = {completed : false , item : this.newTodoItem};
                 // localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
-                this.$emit('addTodoItem',this.newTodoItem);
+                //this.$emit('addTodoItem',this.newTodoItem);
+                //vuex 문법
+                const text = this.newTodoItem.trim();
+                this.$store.commit('addTodoItem', text);
                 this.clearInput();
             } else {
                 this.showModal = !this.showModal;
@@ -43,7 +46,7 @@ export default {
         }
     },
     components : {
-        Modal : Modal
+        Modal
     }
 }
 </script>
