@@ -25,8 +25,26 @@ vscode -> gitbug > jenkins > build 배포
 git config --global user.email "adsfdas@naver.com"
 git config --global user.name "hbk0105"
 
+# ES6 Object Spread Operator
+https://paperblock.tistory.com/62  
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
 https://babeljs.io/
 
 https://joshua1988.github.io/web-development/vuejs/vuex-start/
 npm install vuex --save
+
+
+# Vue computed 개념 정리
+https://velog.io/@jinsu6688/vuejs-computed
+
+# Helper
+https://ict-nroo.tistory.com/108
+
+state -> mapState
+getters -> mapGetters
+mutations -> mapMutations
+actions -> mapActions
+
+
+import { mapState , mapGetters , mapMutations , mapActions } from 'vuex'
