@@ -1,4 +1,6 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+// vue.config.js
+// https://cli.vuejs.org/config/#runtimecompiler
+module.exports = {
+    lintOnSave: false ,
+    transpileDependencies: ['@vue/reactivity']
+  }

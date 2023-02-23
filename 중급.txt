@@ -20,4 +20,7 @@ https://github.com/HackerNews/API
 	- 2.x : 필요 X
 	- 3.X : 필요 O
 
+# 라우터 추가
+npm i vue-router@next
 
+npm install --save axios

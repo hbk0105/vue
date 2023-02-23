@@ -14,13 +14,16 @@ const storage = {
 }
 
 const state = {
-    headerText : 'TODO IT',
+    headerText : 'TODO IT2',
     todoItems : storage.fetch(),
 }
 
 const getters = {
     storeTodoItems(state){
         return state.todoItems;
+    },
+    headerText(state){
+        return state.headerText;
     }
 }
 
