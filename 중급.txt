@@ -24,3 +24,7 @@ https://github.com/HackerNews/API
 npm i vue-router@next
 
 npm install --save axios
+
+npm i vuex
+
+https://router.vuejs.org/guide/

@@ -9,7 +9,7 @@ import ItemView from '../views/ItemView.vue';
 
 
 
-const router = new createRouter({
+export const router = new createRouter({
     mode : history, // url # 붙는거 방지
     history: createWebHistory(),
     routes : [
@@ -30,7 +30,7 @@ const router = new createRouter({
             component : JobsView
         },
         {
-            path : '/user',
+            path : '/user/:id',
             component : UserView
         },
         {
@@ -38,7 +38,7 @@ const router = new createRouter({
             component : ItemView
         },
     ]
-})
+});
 
 // 라우터 default 이름을 router 로 지정!
-export default router;
+//export router;
