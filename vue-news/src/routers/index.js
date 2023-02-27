@@ -10,32 +10,39 @@ import ItemView from '../views/ItemView.vue';
 
 
 export const router = new createRouter({
-    mode : history, // url # 붙는거 방지
+    //mode : history, // url # 붙는거 방지
     history: createWebHistory(),
     routes : [
         {
             path : '/', // url 주소
-            redirect : '/news' // 리다이렉트 url
+            redirect : '/news', // 리다이렉트 url
+            meta : { transition: 'slide-fade' },
         },
         {
             path : '/news', // url 주소
-            component : NewsView // url 주소로 갔을 때 표시될 컴포넌트
+            component : NewsView, // url 주소로 갔을 때 표시될 컴포넌트
+            meta: { transition: 'slide-fade' },
         },
         {
             path : '/ask',
-            component :AskView
+            component :AskView,
+            meta: { transition: 'slide-fade' },
         },
         {
             path : '/jobs',
-            component : JobsView
+            component : JobsView,
+            meta: { transition: 'slide-fade' },
         },
         {
             path : '/user/:id',
-            component : UserView
+            component : UserView,
+            meta: { transition: 'slide-fade' },
         },
         {
-            path : '/item',
-            component : ItemView
+            path : '/item/:id',
+            component : ItemView,
+            meta: { transition: 'slide-fade' },
+            
         },
     ]
 });

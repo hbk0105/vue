@@ -41,7 +41,8 @@ https://velog.io/@jinsu6688/vuejs-computed
 # Helper
 https://ict-nroo.tistory.com/108
 
-state -> mapState
+# https://youbiiin.tistory.com/16
+state -> mapState 
 getters -> mapGetters
 mutations -> mapMutations
 actions -> mapActions

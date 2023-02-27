@@ -2,8 +2,10 @@ import { createStore } from 'vuex';
 //import { fetchNewsList , fetchAskList , fetchJobsList } from '../api/index.js';
 import { mutations } from './mutations.js';
 import { actions } from './actions.js';
-
-// API -> VUEX(actions > mutations > state) -> view
+/* 
+각 컴포넌트(dispatch) -> actions(commit) -> mutations(state) -> state -> 모든 컴포넌트에서 사용
+API -> VUEX(actions > mutations > state) -> view 
+*/
 
 export const store = createStore({
     state : {
@@ -11,6 +13,8 @@ export const store = createStore({
         news : [],
         ask : [],
         jobs : [],
+        user : {},
+        item : {},
     },
     getters : {
         fetchedAsk(state){
@@ -21,6 +25,12 @@ export const store = createStore({
         },
         fetchedNews(state){
             return state.news;
+        },
+        fetchUsers(state){
+            return state.user;
+        },
+        fetchItems(state){
+            return state.item;
         }
 
     },
