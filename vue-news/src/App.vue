@@ -2,14 +2,12 @@
   <div id="app">
     <tool-bar></tool-bar>
 
-      <RouterView :name="viewName" v-slot="{ Component, route }">
-        <Transition name="slide-fade"
-        mode="out-in">
-          <div :key="route.name">  
-            <component :is="Component"></component>
-          </div>
-        </Transition>
-      </RouterView>
+      <router-view v-slot="{ Component }">
+        <transition  name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+
   </div>
 </template>
 <script>
@@ -28,32 +26,25 @@ body {
   padding: 0;
   margin: 0;
 }
+a {
+  color: #34495e;
+  text-decoration: none;
+}
+a.router-link-exact-active{
+  text-decoration: underline;
+}
+a:hover{
+    color: #42b883;
+    text-decoration: underline;
+}
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease-out;
 }
-
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
 
-/*
-  Enter and leave animations can use different
-  durations and timing functions.
-*/
-.slide-fade-enter-active {
-  transition: all 0.3s ease-out;
-}
-
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(20px);
-  opacity: 0;
-}
 </style>

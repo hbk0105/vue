@@ -49,3 +49,53 @@ actions -> mapActions
 
 
 import { mapState , mapGetters , mapMutations , mapActions } from 'vuex'
+
+
+플러그인
+
+Auto Close Tag
+
+Auto Rename Tag
+
+Bracket Peek
+
+Bracket Select
+
+Doxygen Documentation Generator
+
+Error Lens
+
+ESLint
+
+GitLens — Git supercharged
+
+HTML CSS Support
+
+Indentation Level Movement
+
+JetBrains IDE Keymap
+
+Korean Language Pack for Visual Studio Code
+
+Live Server
+
+Material Icon Theme
+
+Night Owl
+
+Prettier - Code formatter
+
+Project Manager
+
+Surround
+
+TSLint
+
+Vetur
+
+Vue 3 Snippets
+
+
+
+
+

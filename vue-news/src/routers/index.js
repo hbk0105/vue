@@ -16,32 +16,29 @@ export const router = new createRouter({
         {
             path : '/', // url 주소
             redirect : '/news', // 리다이렉트 url
-            meta : { transition: 'slide-fade' },
         },
         {
             path : '/news', // url 주소
+            name : 'news',
             component : NewsView, // url 주소로 갔을 때 표시될 컴포넌트
-            meta: { transition: 'slide-fade' },
         },
         {
             path : '/ask',
+            name : 'ask',
             component :AskView,
-            meta: { transition: 'slide-fade' },
         },
         {
             path : '/jobs',
+            name : 'jobs',
             component : JobsView,
-            meta: { transition: 'slide-fade' },
         },
         {
             path : '/user/:id',
             component : UserView,
-            meta: { transition: 'slide-fade' },
         },
         {
             path : '/item/:id',
             component : ItemView,
-            meta: { transition: 'slide-fade' },
             
         },
     ]
