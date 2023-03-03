@@ -44,7 +44,6 @@ export default {
     }else if(name === 'jobs'){
         actionName = 'FETCH_JOBS';
     }
-    console.log(actionName);
     this.$store.dispatch(`${actionName}`);
   },
   computed : {

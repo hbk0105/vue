@@ -2,7 +2,17 @@
   <div>
     <section>
       <!-- 질문 상세 정보 -->
-      <div class="user-container">
+      <user-profile :info="fetchItems">
+        <template v-slot:username>
+
+          <router-link v-bind:to="`/user/${fetchItems.user}`" target="_blank"> 
+           {{ fetchItems.user }}
+          </router-link>
+
+        </template>
+        <template #time> {{ 'Posted' + fetchItems.time_ago }}</template>
+      </user-profile>
+      <!-- <div class="user-container">
         <div>
           <i class="fas fa-user"></i>
         </div>
@@ -15,17 +25,19 @@
             {{ item.time_ago }}
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <h2> {{ item.title }}</h2>
+    </section>
+    <section>
+         <h2> {{ fetchItems.title }}</h2>
     </section>
     <section>
       <!-- 댓글 -->
-      <div v-html="item .content"></div>
+      <div v-html="fetchItems.content"></div>
 
-      <div v-for="comments in item.comments" :key="comments">
+      <!-- <div v-for="comments in fetchItems.comments" :key="comments">
         <i class="fas fa-user"></i>{{ comments.user }} | {{ comments.time_ago }} <div v-html="comments.content"></div>
-    </div>
+      </div> -->
 
     </section>
 <!--     
@@ -40,12 +52,14 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import UserProfile from '../components/UserProfile.vue';
 export default {
+  components: { UserProfile },
   computed : {
     // item(){
     //   return this.$store.state.item;
     // }
-    ...mapGetters({item : 'fetchItems' })
+    ...mapGetters({fetchItems : 'fetchItems' })
     
   },
   created(){
