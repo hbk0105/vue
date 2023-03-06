@@ -2,7 +2,8 @@ import { fetchNewsList ,
         fetchAskList , 
         fetchJobsList , 
         fetchUserInfo ,
-        fetchItem } from '../api/index.js';
+        fetchItem , 
+        fetchList } from '../api/index.js';
 
 export const actions = {
     FETCH_NEWS({ commit }){
@@ -31,6 +32,13 @@ export const actions = {
         .then(({data}) => {
             commit('SET_ITEM', data)
         }).catch(err => console.log(err));
+    },
+    FETCH_LIST({commit} , pageName){
+        fetchList(pageName)
+        .then(({data}) => {
+            commit('SET_LIST', data)
+        }).catch(err => console.log(err));
+
     }
 
 }

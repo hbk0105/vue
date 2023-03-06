@@ -13,6 +13,15 @@ export const mutations = {
     },
     SET_ITEM(state , item){
       state.item = item;
+    },
+    START_SPINNER(state){
+      state.LoadingStatus = true;
+    },
+    END_SPINNER(state){
+        state.LoadingStatus = false;
+    },
+    SET_LIST(state , list){
+      state.list = list;
     }
   }
 

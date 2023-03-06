@@ -8,10 +8,14 @@ export 시 default를 붙인 경우 중괄호 없이 import가 가능하지만, 
 
 import { createApp } from 'vue';
 import App from './App.vue';
-import { router } from './routers/index.js'; // 생성한 뷰 라우터 받아오기
+import  router  from './routers/index.js'; // 생성한 뷰 라우터 받아오기
 import { store }  from './store/index.js';
+import mitt from 'mitt';
 
 const app = createApp(App);
 app.use(router);  // 라우터 사용
 app.use(store);
+const emitter = mitt();
+app.config.globalProperties.emitter = emitter;
 app.mount('#app');
+

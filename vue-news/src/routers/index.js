@@ -1,15 +1,15 @@
 
 // https://dana-study-log.tistory.com/entry/Vue3-%EB%9D%BC%EC%9A%B0%ED%84%B0-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9-vue-router
 import { createRouter, createWebHistory } from 'vue-router';
-import NewsView from '../views/NewsView.vue';
-import AskView  from '../views/AskView.vue';
-import JobsView from '../views/JobsView.vue';
+// import NewsView from '../views/NewsView.vue';
+// import AskView  from '../views/AskView.vue';
+// import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
+import { store }  from '../store/index.js';
+import createListView from '../views/CreateListVue.js';
 
-
-
-export const router = new createRouter({
+ const router = new createRouter({
     //mode : history, // url # 붙는거 방지
     history: createWebHistory(),
     routes : [
@@ -20,17 +20,20 @@ export const router = new createRouter({
         {
             path : '/news', // url 주소
             name : 'news',
-            component : NewsView, // url 주소로 갔을 때 표시될 컴포넌트
+            //component : NewsView, // url 주소로 갔을 때 표시될 컴포넌트
+            component : createListView('NewsView')
         },
         {
             path : '/ask',
             name : 'ask',
-            component :AskView,
+            //component :AskView,
+            component : createListView('AskView')
         },
         {
             path : '/jobs',
             name : 'jobs',
-            component : JobsView,
+            //component : JobsView,
+            component : createListView('JobsView')
         },
         {
             path : '/user/:id',
@@ -43,6 +46,24 @@ export const router = new createRouter({
         },
     ]
 });
+// vue2 - 이벤트 버스
+// vue3 - mitt를 이용
+
+//  https://pjs21s.github.io/spinner-vuejs/ 
+// https://v3.router.vuejs.org/kr/guide/advanced/navigation-guards.html
+router.beforeEach((to, from, next) => {
+    store.commit('START_SPINNER');
+    
+    setTimeout(() => {
+        next();
+    }, 100);
+})
+
+// eslint-disable-next-line no-unused-vars
+router.afterEach((to, from) => {
+    store.commit('END_SPINNER');
+})
+
 
 // 라우터 default 이름을 router 로 지정!
-//export router;
+export default router;

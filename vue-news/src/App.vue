@@ -7,15 +7,19 @@
           <component :is="Component" />
         </transition>
       </router-view>
+<!--    -->
+      <spinner :loading="this.$store.state.LoadingStatus"/>
 
   </div>
 </template>
 <script>
 import ToolBar from './components/ToolBar.vue';
+import Spinner from './components/Spinner.vue';
 
 export default {
   components : {
     ToolBar, // js 는 html --> tool-bar 로 인식
+    Spinner,
   },
   
 }
@@ -40,7 +44,7 @@ a:hover{
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 .fade-enter-from,
 .fade-leave-to {

@@ -33,9 +33,9 @@ export default {
   //     jobsItems : 'fetchedJobs'
   //    })
   // },
-  // created(){
-  //     this.$store.dispatch('FETCH_JOBS');
-  // }
+  created(){
+      this.$store.dispatch('FETCH_JOBS');
+  }
 }
 </script>
 
