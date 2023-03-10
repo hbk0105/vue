@@ -28,3 +28,33 @@ npm install --save axios
 npm i vuex
 
 https://router.vuejs.org/guide/
+
+
+# vue2 - 이벤트 버스 , vue3 - mitt를 이용
+https://pjs21s.github.io/spinner-vuejs/
+
+하이오더 컴포넌트
+
+
+[데이터 호출 시점]
+1. 라우터 네비게이션 가드
+	- 특정 URL로 접근하기 전의 동작을 정의하는 속성(함수)
+2. 컴포넌트 라이프 사이클 훅
+	- created : 컴포넌트가 생성되자 마자 호출되는 로직
+
+
+https://velog.io/@khy226/%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%9E%80-Promise-asyncawait-%EA%B0%9C%EB%85%90
+
+#구조 분해 문법(Destructuring)
+
+https://joshua1988.github.io/vue-camp/es6+/destructuring.html#%E1%84%90%E1%85%B3%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC-%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%E1%84%8B%E1%85%B4-%E1%84%80%E1%85%A1%E1%86%B9%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%81%E1%85%A5%E1%84%82%E1%85%A2%E1%84%8B%E1%85%A9%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8
+
+
+# 컴포넌트 디자인 패던
+1. Common - 기본적인 컴포넌트 등록과 컴포넌트 통신
+2. Slot	- 마크업 확장이 가능한 컴포넌트
+3. Controlled - 결합력이 높은 컴포넌트
+4. Renderless - 데이터 처리 컴포넌트
+https://velog.io/@jtwjs/%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4
+
+https://velog.io/@ymh0951/%EB%B7%B0-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-Vue.js-Component-Design-Patterns

@@ -33,6 +33,9 @@ export const store = createStore({
         },
         fetchItems(state){
             return state.item;
+        },
+        fetchedList(state){
+            return state.list;
         }
 
     },

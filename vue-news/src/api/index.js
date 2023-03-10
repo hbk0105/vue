@@ -6,32 +6,56 @@ const config = {
     baseUrl : 'https://api.hnpwa.com/v0',
 };
 
-function fetchNewsList(){
-    // return axios.get(config.baseUrl + '/news/1.json');
-    return axios.get(`${config.baseUrl}/news/1.json`);
+async function fetchNewsList(){
+    try{
+        // return axios.get(config.baseUrl + '/news/1.json');
+        const response =  await axios.get(`${config.baseUrl}/news/1.json`);
+        return response;
+    }catch(error){
+        console.log(error);
+    }
 }
 
-function fetchJobsList(){
-    // return axios.get(config.baseUrl + '/jobs/1.json');
-    return axios.get(`${config.baseUrl}/jobs/1.json`);
+async function fetchJobsList(){
+    try{
+        // return axios.get(config.baseUrl + '/jobs/1.json');
+        return await axios.get(`${config.baseUrl}/jobs/1.json`);
+    }catch(err){
+        console.log(err);
+    }
 }
 
-function fetchAskList(){
-    // return axios.get(config.baseUrl + '/ask/1.json');
-    return axios.get(`${config.baseUrl}/ask/1.json`);
+async function fetchAskList(){
+    try {
+        // return axios.get(config.baseUrl + '/ask/1.json');
+        return await axios.get(`${config.baseUrl}/ask/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchUserInfo(userName){
-    return  axios.get(`${config.baseUrl}/user/${userName}.json`);
+async function fetchUserInfo(userName){
+    try {
+        return await axios.get(`${config.baseUrl}/user/${userName}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchItem(id){
-    return axios.get(`${config.baseUrl}/item/${id}.json`);
+async function fetchItem(id){
+    try {
+        return await axios.get(`${config.baseUrl}/item/${id}.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchList(pageName){
-    console.log(`${config.baseUrl}/${pageName}/1.json`)
-    return axios.get(`${config.baseUrl}/${pageName}/1.json`);
+async function fetchList(pageName){
+    try {
+        return await axios.get(`${config.baseUrl}/${pageName}/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export {
